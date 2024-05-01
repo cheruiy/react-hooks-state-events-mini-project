@@ -4,8 +4,8 @@ function NewTaskForm({ onTaskFormSubmit, categories }) {
   const [text, setText] = useState("");
   const [category, setCategory] = useState("Code");
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleSubmit(event) {
+    event.preventDefault();
     onTaskFormSubmit({ text, category });
     setText("");
     setCategory("Code");
@@ -19,15 +19,15 @@ function NewTaskForm({ onTaskFormSubmit, categories }) {
         <input
           type="text"
           value={text}
-          onChange={(e) => setText(e.target.value)}
+          onChange={(event) => setText(event.target.value)}
         />
       </label>
 
       <label>
         Category
-        <select value={category} onChange={(e) => setCategory(e.target.value)}>
-          {categories.map((cat) => (
-            <option key={cat}>{cat}</option>
+        <select value={category} onChange={(event) => setCategory(event.target.value)}>
+          {categories.map((cart) => (
+            <option key={cart}>{cart}</option>
           ))}
         </select>
       </label>
